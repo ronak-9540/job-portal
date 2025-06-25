@@ -1,0 +1,285 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Professional Network Signup with Captcha and Location
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <header class="border-b border-gray-300">
+   <nav class="max-w-5xl mx-auto flex justify-between items-center px-4 py-3">
+    <a class="flex items-center space-x-2" href="#">
+     <img alt="LinkedIn logo blue square with white 'in' letters" class="w-6 h-6" height="24" src="https://storage.googleapis.com/a1aa/image/783b8454-2bfd-4273-fe18-adf650c9ae3b.jpg" width="24"/>
+     <span class="text-sm text-gray-900">
+      Professional Network
+     </span>
+    </a>
+    <a class="text-xs text-blue-600 hover:underline" href="Email.html">
+     Already have an account? Sign in
+    </a>
+   </nav>
+  </header>
+  <main class="max-w-3xl mx-auto px-4 py-8">
+   <div class="flex justify-center mb-4">
+    <div class="w-1.5 h-1.5 rounded-full bg-pink-500">
+    </div>
+   </div>
+   <h1 class="text-center text-xl font-semibold text-gray-900 mb-1">
+    Join the Professional Network
+   </h1>
+   <p class="text-center text-sm text-gray-600 mb-6">
+    Create your professional profile
+   </p>
+   <form autocomplete="off" class="space-y-6" id="signupForm" novalidate="">
+    <fieldset>
+     <legend class="font-semibold text-gray-900 mb-4">
+      Personal Information
+     </legend>
+     <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="firstName">
+        First Name
+       </label>
+       <input class="w-full border border-gray-300 rounded px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="firstName" name="firstName" placeholder="Enter your first name" type="text"/>
+      </div>
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="lastName">
+        Last Name
+       </label>
+       <input class="w-full border border-gray-300 rounded px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="lastName" name="lastName" placeholder="Enter your last name" type="text"/>
+      </div>
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="email">
+        Email
+       </label>
+       <input class="w-full border border-gray-300 rounded px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="email" name="email" placeholder="Enter your Email" type="email"/>
+      </div>
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="phone">
+        Phone
+       </label>
+       <input class="w-full border border-gray-300 rounded px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="phone" name="phone" placeholder="Enter your Phone" type="tel"/>
+      </div>
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="password">
+        Password
+       </label>
+       <input class="w-full border border-gray-300 rounded px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="password" name="password" placeholder="Create a password" type="password"/>
+      </div>
+      <div>
+       <span class="block text-xs font-normal text-gray-700 mb-1">
+        Gender
+       </span>
+       <div class="flex items-center space-x-4 text-sm text-gray-900">
+        <label class="flex items-center space-x-1 cursor-pointer">
+         <input class="form-radio text-blue-600" name="gender" type="radio" value="male"/>
+         <span>
+          Male
+         </span>
+        </label>
+        <label class="flex items-center space-x-1 cursor-pointer">
+         <input class="form-radio text-blue-600" name="gender" type="radio" value="female"/>
+         <span>
+          Female
+         </span>
+        </label>
+        <label class="flex items-center space-x-1 cursor-pointer">
+         <input class="form-radio text-blue-600" name="gender" type="radio" value="other"/>
+         <span>
+          Other
+         </span>
+        </label>
+       </div>
+      </div>
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="country">
+        Country
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="country" name="country" required>
+        <option disabled="" selected="" value="">
+         Add your Country
+        </option>
+        <option value="USA">
+         United States
+        </option>
+        <option value="Canada">
+         Canada
+        </option>
+        <option value="Australia">
+         Australia
+        </option>
+        <option value="India">
+         India
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block text-xs font-normal text-gray-700 mb-1" for="state">
+        State
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="state" name="state" required>
+        <option disabled="" selected="" value="">
+         Add your State
+        </option>
+       </select>
+      </div>
+     </div>
+    </fieldset>
+    <fieldset>
+     <label class="block text-xs font-normal text-gray-700 mb-1" for="captchaInput">
+      Captcha Verification
+     </label>
+     <div class="flex items-center space-x-3 mb-2">
+      <canvas class="bg-gray-200 rounded px-4 py-2 text-sm font-semibold text-gray-700 select-none" height="40" id="captchaCanvas" style="min-width: 120px;" width="120">
+      </canvas>
+      <button aria-label="Refresh captcha" class="border border-gray-300 rounded px-3 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-600" id="refreshCaptcha" type="button">
+       <i class="fas fa-th">
+       </i>
+      </button>
+     </div>
+     <input autocomplete="off" class="w-full border border-gray-300 rounded px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600" id="captchaInput" name="captchaInput" placeholder="Enter captcha" type="text"/>
+     <p class="mt-1 text-xs text-red-600 hidden" id="captchaError">
+      Captcha does not match.
+     </p>
+    </fieldset>
+    <div>
+     <button class="w-full bg-blue-700 hover:bg-blue-800 text-black font-semibold py-3 rounded" type="submit">
+      Next
+     </button>
+    </div>
+   </form>
+  </main>
+  <script>
+   const captchaCanvas = document.getElementById('captchaCanvas');
+    const ctx = captchaCanvas.getContext('2d');
+    const refreshBtn = document.getElementById('refreshCaptcha');
+    const captchaInput = document.getElementById('captchaInput');
+    const captchaError = document.getElementById('captchaError');
+    const countrySelect = document.getElementById('country');
+    const stateSelect = document.getElementById('state');
+    let captchaText = '';
+
+    const statesByCountry = {
+      USA: ['California', 'Florida', 'New York', 'Texas', 'Washington'],
+      Canada: ['Alberta', 'British Columbia', 'Ontario', 'Quebec'],
+      Australia: ['New South Wales', 'Queensland', 'Victoria', 'Western Australia'],
+      India: ['Delhi', 'Karnataka', 'Maharashtra', 'Tamil Nadu', 'Uttar Pradesh']
+    };
+
+    function randomColor(min, max) {
+      const r = Math.floor(Math.random() * (max - min) + min);
+      const g = Math.floor(Math.random() * (max - min) + min);
+      const b = Math.floor(Math.random() * (max - min) + min);
+      return `rgb(${r},${g},${b})`;
+    }
+
+    function generateCaptcha() {
+      captchaText = '';
+      ctx.clearRect(0, 0, captchaCanvas.width, captchaCanvas.height);
+      ctx.textBaseline = 'middle';
+      ctx.font = 'bold 24px Arial';
+
+      // Draw background noise lines
+      for (let i = 0; i < 5; i++) {
+        ctx.strokeStyle = randomColor(100, 200);
+        ctx.beginPath();
+        ctx.moveTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+        ctx.lineTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+        ctx.stroke();
+      }
+
+      // Generate random 6 character captcha
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      for (let i = 0; i < 6; i++) {
+        const char = chars.charAt(Math.floor(Math.random() * chars.length));
+        captchaText += char;
+        ctx.fillStyle = randomColor(50, 160);
+        const x = 15 + i * 18;
+        const y = captchaCanvas.height / 2;
+        const angle = (Math.random() - 0.5) * 0.4; // rotate between -0.2 and 0.2 radians
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+        ctx.fillText(char, 0, 0);
+        ctx.restore();
+      }
+
+      // Draw dots noise
+      for (let i = 0; i < 30; i++) {
+        ctx.fillStyle = randomColor(0, 255);
+        ctx.beginPath();
+        ctx.arc(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height, 1.5, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    }
+
+    function populateStates(country) {
+      stateSelect.innerHTML = '';
+      if (!country || !statesByCountry[country]) {
+        const option = document.createElement('option');
+        option.textContent = 'Add your State';
+        option.disabled = true;
+        option.selected = true;
+        option.value = '';
+        stateSelect.appendChild(option);
+        stateSelect.disabled = true;
+        return;
+      }
+      stateSelect.disabled = false;
+      const defaultOption = document.createElement('option');
+      defaultOption.textContent = 'Add your State';
+      defaultOption.disabled = true;
+      defaultOption.selected = true;
+      defaultOption.value = '';
+      stateSelect.appendChild(defaultOption);
+      statesByCountry[country].forEach(state => {
+        const option = document.createElement('option');
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+      });
+    }
+
+    refreshBtn.addEventListener('click', () => {
+      generateCaptcha();
+      captchaInput.value = '';
+      captchaError.classList.add('hidden');
+    });
+
+    countrySelect.addEventListener('change', (e) => {
+      populateStates(e.target.value);
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (captchaInput.value.trim().toUpperCase() !== captchaText) {
+        captchaError.classList.remove('hidden');
+        captchaInput.focus();
+        return;
+      } else {
+        captchaError.classList.add('hidden');
+        alert('Form submitted successfully!');
+      }
+      // Additional validation can be added here if needed
+      alert('Form submitted successfully!');
+      // Here you can add actual form submission logic
+    });
+
+    // Initialize states select as disabled
+    populateStates(null);
+
+    // Generate captcha on page load
+    generateCaptcha();
+  </script>
+ </body>
+</html>

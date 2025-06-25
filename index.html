@@ -1,0 +1,1068 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Responsive Navigation with Styled Dropdown Menus
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+  </style>
+ </head>
+ <body class="bg-[#f5f4f6]">
+  <div class="relative min-h-screen">
+   <img alt="Modern IT company workspace with computers, people collaborating, and bright natural light" class="absolute inset-0 w-full h-full object-cover" height="600" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80" width="1920"/>
+   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+   <nav class="relative bg-[#f5f4f6]/90 px-6 py-4 z-10">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+     <div class="flex items-center space-x-6">
+      <a class="flex items-center justify-center w-12 h-12 rounded-xl bg-white relative" href="#">
+       <img alt="apna logo text in dark gray on white rounded square background with small colored bars at bottom" class="block" height="24" src="https://storage.googleapis.com/a1aa/image/dc561896-c5bc-4cc4-77f2-0c430c308a6f.jpg" width="24"/>
+       <div class="absolute bottom-1 left-3 w-3 h-1 rounded-sm bg-[#3a9ad9]"></div>
+       <div class="absolute bottom-1 left-7 w-3 h-1 rounded-sm bg-[#f9b700]"></div>
+       <div class="absolute bottom-1 left-11 w-3 h-1 rounded-sm bg-[#3dbb9d]"></div>
+      </a>
+      <div class="hidden md:flex items-center space-x-6 relative">
+       <div class="group relative">
+        <button class="flex items-center text-[#1f1f29] font-semibold text-sm leading-5 cursor-pointer focus:outline-none" type="button" aria-haspopup="true" aria-expanded="false">
+         Jobs
+         <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity z-20">
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Development</a>
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Marketing</a>
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Design</a>
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Customer Support</a>
+        </div>
+       </div>
+       <a class="flex items-center text-[#1f1f29] font-semibold text-sm leading-5 cursor-pointer" href="#">
+        Job Prep
+        <span class="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold text-white bg-gradient-to-r from-[#ff5f00] to-[#ff2a00]">NEW</span>
+       </a>
+       <a class="flex items-center text-[#1f1f29] font-semibold text-sm leading-5 cursor-pointer" href="#">
+        Contests
+        <span class="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold text-white bg-gradient-to-r from-[#ff5f00] to-[#ff2a00]">NEW</span>
+       </a>
+       <a class="flex items-center text-[#1f1f29] font-semibold text-sm leading-5 cursor-pointer" href="#">
+        Degree
+        <span class="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold text-white bg-gradient-to-r from-[#ff5f00] to-[#ff2a00]">NEW</span>
+       </a>
+       <div class="group relative">
+        <button class="flex items-center text-[#1f1f29] font-semibold text-sm leading-5 cursor-pointer focus:outline-none" type="button" aria-haspopup="true" aria-expanded="false">
+         Resume Tools
+         <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity z-20">
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Resume Builder</a>
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cover Letter</a>
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Interview Tips</a>
+         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Career Advice</a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="hidden md:flex items-center space-x-6">
+      <a class="text-[#1f6e5a] font-semibold text-sm leading-5 cursor-pointer" href="#">
+       Employer Login
+      </a>
+      <a class="bg-[#1f6e5a] text-white font-semibold text-sm leading-5 px-6 py-2 rounded-md cursor-pointer" href="#">
+       Candidate Login
+      </a>
+     </div>
+     <button aria-label="Toggle menu" class="md:hidden text-[#1f1f29] focus:outline-none z-20" id="mobile-menu-button" type="button">
+      <i class="fas fa-bars text-2xl"></i>
+     </button>
+    </div>
+    <div class="md:hidden mt-4 hidden flex-col space-y-4 z-10" id="mobile-menu">
+     <a class="flex items-center text-[#1f1f29] font-semibold text-base leading-6 cursor-pointer" href="#">
+      Jobs
+     </a>
+     <a class="flex items-center text-[#1f1f29] font-semibold text-base leading-6 cursor-pointer" href="#">
+      Job Prep
+      <span class="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold text-white bg-gradient-to-r from-[#ff5f00] to-[#ff2a00]">NEW</span>
+     </a>
+     <a class="flex items-center text-[#1f1f29] font-semibold text-base leading-6 cursor-pointer" href="#">
+      Contests
+      <span class="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold text-white bg-gradient-to-r from-[#ff5f00] to-[#ff2a00]">NEW</span>
+     </a>
+     <a class="flex items-center text-[#1f1f29] font-semibold text-base leading-6 cursor-pointer" href="#">
+      Degree
+      <span class="ml-2 px-2 py-0.5 rounded-md text-xs font-semibold text-white bg-gradient-to-r from-[#ff5f00] to-[#ff2a00]">NEW</span>
+     </a>
+     <a class="flex items-center text-[#1f1f29] font-semibold text-base leading-6 cursor-pointer" href="#">
+      Resume Tools
+     </a>
+     <a class="text-[#1f6e5a] font-semibold text-base leading-6 cursor-pointer" href="#">
+      Employer Login
+     </a>
+     <a class="bg-[#1f6e5a] text-white font-semibold text-base leading-6 px-6 py-2 rounded-md text-center cursor-pointer" href="#">
+      Candidate Login
+     </a>
+    </div>
+   </nav>
+   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 mt-24 max-w-4xl mx-auto text-white">
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow-lg">
+     Find Your Dream Job Today
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl font-medium max-w-xl drop-shadow-md">
+     Connect with over 100,000+ employers and opportunities in India
+    </p>
+    <form class="mt-10 w-full max-w-3xl flex flex-col sm:flex-row gap-4">
+     <div class="flex-grow">
+      <label class="sr-only" for="job-title">
+       Job title or keywords
+      </label>
+      <input class="w-full border border-gray-300 rounded-md py-3 px-4 text-sm leading-5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1f6e5a] focus:border-transparent" id="job-title" name="job-title" placeholder="Job title or keywords" type="text"/>
+     </div>
+     <div class="flex-grow max-w-xs">
+      <label class="sr-only" for="location">
+       Location
+      </label>
+      <input class="w-full border border-gray-300 rounded-md py-3 px-4 text-sm leading-5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1f6e5a] focus:border-transparent" id="location" name="location" placeholder="Location" type="text"/>
+     </div>
+     <button class="bg-[#1f6e5a] text-white font-semibold text-sm leading-5 px-6 py-3 rounded-md whitespace-nowrap hover:bg-[#195243]" type="submit">
+      Search Jobs
+     </button>
+    </form>
+   </div>
+  </div>
+  <script>
+   const btn = document.getElementById('mobile-menu-button');
+   const menu = document.getElementById('mobile-menu');
+   btn.addEventListener('click', () => {
+     menu.classList.toggle('hidden');
+   });
+  </script>
+ 
+  
+
+
+
+
+
+  <title>
+   Job Board
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+      
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+       
+    }
+  </style>
+ </head>
+ <body class="bg-[#F9FAFB] text-[#111827]">
+  <div class="max-w-[1200px] mx-auto px-4 py-8">
+   <div class="flex flex-col lg:flex-row gap-6">
+    <!-- Filters -->
+    <aside class="bg-white rounded-lg p-6 w-full max-w-[220px] shrink-0 shadow-sm">
+     <h3 class="font-semibold text-sm mb-4 text-[#111827]">
+      Filters
+     </h3>
+     <form class="space-y-6 text-xs text-[#6B7280]">
+      <!-- Job Type -->
+      <div>
+       <h4 class="font-semibold text-[11px] mb-2 text-[#111827]">
+        Job Type
+       </h4>
+       <div class="flex flex-col gap-1">
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Full-time
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Part-time
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Contract
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Remote
+         </span>
+        </label>
+       </div>
+      </div>
+      <!-- Experience Level -->
+      <div>
+       <h4 class="font-semibold text-[11px] mb-2 text-[#111827]">
+        Experience Level
+       </h4>
+       <div class="flex flex-col gap-1">
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Entry Level
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Mid Level
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Senior Level
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          Director
+         </span>
+        </label>
+       </div>
+      </div>
+      <!-- Salary Range -->
+      <div>
+       <h4 class="font-semibold text-[11px] mb-2 text-[#111827]">
+        Salary Range
+       </h4>
+       <div class="flex flex-col gap-1">
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          $0-$50k
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          $50k-$100k
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          $100k-$150k
+         </span>
+        </label>
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+         <input class="w-3.5 h-3.5 border border-gray-300 rounded text-blue-600 focus:ring-0" type="checkbox"/>
+         <span class="select-none text-[11px] text-[#6B7280]">
+          $150k+
+         </span>
+        </label>
+       </div>
+      </div>
+      <button class="text-[11px] text-blue-600 font-semibold mt-2" type="button">
+       Clear all filters
+      </button>
+     </form>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1">
+     <div class="flex justify-between items-center mb-6">
+      <h2 class="font-semibold text-sm text-[#111827]">
+       Featured Jobs
+      </h2>
+      <div class="flex items-center gap-2 text-xs text-[#6B7280]">
+       <span>
+        Sort by:
+       </span>
+       <select class="text-xs text-[#6B7280] bg-[#F9FAFB] border border-[#E5E7EB] rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-600">
+        <option>
+         Most Recent
+        </option>
+       </select>
+      </div>
+     </div>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Job Card 1 -->
+      <article class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB] relative">
+       <img alt="TechCorp Solutions logo, dark background with white text TC" class="w-10 h-10 mb-3" height="40" src="https://storage.googleapis.com/a1aa/image/e703b92a-83ae-46b9-6706-67d306f88f42.jpg" width="40"/>
+       <button aria-label="Bookmark job" class="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+        <i class="far fa-bookmark">
+        </i>
+       </button>
+       <h3 class="font-semibold text-xs text-[#111827] mb-0.5">
+        Senior Software Engineer
+       </h3>
+       <p class="text-[10px] text-[#6B7280] mb-2">
+        TechCorp Solutions
+       </p>
+       <div class="flex items-center gap-2 text-[9px] text-[#9CA3AF] mb-2">
+        <div class="flex items-center gap-1">
+         <i class="fas fa-map-marker-alt">
+         </i>
+         <span>
+          San Francisco, CA
+         </span>
+        </div>
+        <div class="flex items-center gap-1">
+         <i class="fas fa-circle text-[6px]">
+         </i>
+         <span>
+          Full-time
+         </span>
+        </div>
+       </div>
+       <div class="flex justify-between items-center">
+        <span class="text-xs font-semibold text-blue-600">
+         $120k - $180k
+        </span>
+        <button class="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+         Apply Now
+        </button>
+       </div>
+      </article>
+      <!-- Job Card 2 -->
+      <article class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB] relative">
+       <img alt="TechCorp Solutions logo, white background with dark text TC" class="w-10 h-10 mb-3 rounded" height="40" src="https://storage.googleapis.com/a1aa/image/d584bc97-cdf6-4382-2289-02ebf050e067.jpg" width="40"/>
+       <button aria-label="Bookmark job" class="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+        <i class="far fa-bookmark">
+        </i>
+       </button>
+       <h3 class="font-semibold text-xs text-[#111827] mb-0.5">
+        Senior Software Engineer
+       </h3>
+       <p class="text-[10px] text-[#6B7280] mb-2">
+        TechCorp Solutions
+       </p>
+       <div class="flex items-center gap-2 text-[9px] text-[#9CA3AF] mb-2">
+        <div class="flex items-center gap-1">
+         <i class="fas fa-map-marker-alt">
+         </i>
+         <span>
+          San Francisco, CA
+         </span>
+        </div>
+        <div class="flex items-center gap-1">
+         <i class="fas fa-circle text-[6px]">
+         </i>
+         <span>
+          Full-time
+         </span>
+        </div>
+       </div>
+       <div class="flex justify-between items-center">
+        <span class="text-xs font-semibold text-blue-600">
+         $120k - $180k
+        </span>
+        <button class="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+         Apply Now
+        </button>
+       </div>
+      </article>
+      <!-- Job Card 3 -->
+      <article class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB] relative">
+       <img alt="TechCorp Solutions logo, square with blue-gray background and white SU letters" class="w-10 h-10 mb-3 rounded-lg" height="40" src="https://storage.googleapis.com/a1aa/image/79da1603-730b-434d-9568-69c55394f9ae.jpg" width="40"/>
+       <button aria-label="Bookmark job" class="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+        <i class="far fa-bookmark">
+        </i>
+       </button>
+       <h3 class="font-semibold text-xs text-[#111827] mb-0.5">
+        Senior Software Engineer
+       </h3>
+       <p class="text-[10px] text-[#6B7280] mb-2">
+        TechCorp Solutions
+       </p>
+       <div class="flex items-center gap-2 text-[9px] text-[#9CA3AF] mb-2">
+        <div class="flex items-center gap-1">
+         <i class="fas fa-map-marker-alt">
+         </i>
+         <span>
+          San Francisco, CA
+         </span>
+        </div>
+        <div class="flex items-center gap-1">
+         <i class="fas fa-circle text-[6px]">
+         </i>
+         <span>
+          Full-time
+         </span>
+        </div>
+       </div>
+       <div class="flex justify-between items-center">
+        <span class="text-xs font-semibold text-blue-600">
+         $120k - $180k
+        </span>
+        <button class="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+         Apply Now
+        </button>
+       </div>
+      </article>
+      <!-- Job Card 4 -->
+      <article class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB] relative">
+       <img alt="TechCorp Solutions logo, dark background with white text TC" class="w-10 h-10 mb-3" height="40" src="https://storage.googleapis.com/a1aa/image/e703b92a-83ae-46b9-6706-67d306f88f42.jpg" width="40"/>
+       <button aria-label="Bookmark job" class="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+        <i class="far fa-bookmark">
+        </i>
+       </button>
+       <h3 class="font-semibold text-xs text-[#111827] mb-0.5">
+        Senior Software Engineer
+       </h3>
+       <p class="text-[10px] text-[#6B7280] mb-2">
+        TechCorp Solutions
+       </p>
+       <div class="flex items-center gap-2 text-[9px] text-[#9CA3AF] mb-2">
+        <div class="flex items-center gap-1">
+         <i class="fas fa-map-marker-alt">
+         </i>
+         <span>
+          San Francisco, CA
+         </span>
+        </div>
+        <div class="flex items-center gap-1">
+         <i class="fas fa-circle text-[6px]">
+         </i>
+         <span>
+          Full-time
+         </span>
+        </div>
+       </div>
+       <div class="flex justify-between items-center">
+        <span class="text-xs font-semibold text-blue-600">
+         $120k - $180k
+        </span>
+        <button class="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+         Apply Now
+        </button>
+       </div>
+      </article>
+      <!-- Job Card 5 -->
+      <article class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB] relative">
+       <img alt="TechCorp Solutions logo, dark background with white text TC" class="w-10 h-10 mb-3" height="40" src="https://storage.googleapis.com/a1aa/image/e703b92a-83ae-46b9-6706-67d306f88f42.jpg" width="40"/>
+       <button aria-label="Bookmark job" class="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+        <i class="far fa-bookmark">
+        </i>
+       </button>
+       <h3 class="font-semibold text-xs text-[#111827] mb-0.5">
+        Senior Software Engineer
+       </h3>
+       <p class="text-[10px] text-[#6B7280] mb-2">
+        TechCorp Solutions
+       </p>
+       <div class="flex items-center gap-2 text-[9px] text-[#9CA3AF] mb-2">
+        <div class="flex items-center gap-1">
+         <i class="fas fa-map-marker-alt">
+         </i>
+         <span>
+          San Francisco, CA
+         </span>
+        </div>
+        <div class="flex items-center gap-1">
+         <i class="fas fa-circle text-[6px]">
+         </i>
+         <span>
+          Full-time
+         </span>
+        </div>
+       </div>
+       <div class="flex justify-between items-center">
+        <span class="text-xs font-semibold text-blue-600">
+         $120k - $180k
+        </span>
+        <button class="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+         Apply Now
+        </button>
+       </div>
+      </article>
+      <!-- Job Card 6 -->
+      <article class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB] relative">
+       <img alt="TechCorp Solutions logo, light blue background with blue text TC" class="w-10 h-10 mb-3 rounded" height="40" src="https://storage.googleapis.com/a1aa/image/8f568347-370b-4763-c83a-be7db2581cce.jpg" width="40"/>
+       <button aria-label="Bookmark job" class="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+        <i class="far fa-bookmark">
+        </i>
+       </button>
+       <h3 class="font-semibold text-xs text-[#111827] mb-0.5">
+        Senior Software Engineer
+       </h3>
+       <p class="text-[10px] text-[#6B7280] mb-2">
+        TechCorp Solutions
+       </p>
+       <div class="flex items-center gap-2 text-[9px] text-[#9CA3AF] mb-2">
+        <div class="flex items-center gap-1">
+         <i class="fas fa-map-marker-alt">
+         </i>
+         <span>
+          San Francisco, CA
+         </span>
+        </div>
+        <div class="flex items-center gap-1">
+         <i class="fas fa-circle text-[6px]">
+         </i>
+         <span>
+          Full-time
+         </span>
+        </div>
+       </div>
+       <div class="flex justify-between items-center">
+        <span class="text-xs font-semibold text-blue-600">
+         $120k - $180k
+        </span>
+        <button class="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+         Apply Now
+        </button>
+       </div>
+      </article>
+     </div>
+    </main>
+    <!-- Right Sidebar -->
+    <aside class="w-full max-w-[220px] shrink-0 flex flex-col gap-6">
+     <!-- Quick Actions -->
+     <section class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB]">
+      <h3 class="font-semibold text-xs text-[#111827] mb-3">
+       Quick Actions
+      </h3>
+      <button class="w-full bg-blue-600 text-white text-xs py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+       <a href="uploderesum.html">Upload Resume</a>
+      </button>
+      <button class="w-full mt-2 border border-blue-600 text-blue-600 text-xs py-2 rounded hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600">
+       Create Job Alert
+      </button>
+     </section>
+     <!-- Popular Companies -->
+     <section class="bg-white rounded-lg p-4 shadow-sm border border-[#E5E7EB]">
+      <h3 class="font-semibold text-xs text-[#111827] mb-3">
+       Popular Companies
+      </h3>
+      <div class="grid grid-cols-3 gap-3">
+       <img alt="Company 1 logo, white background with dark text C1" class="w-12 h-12 rounded-lg object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/594741ce-bfb1-46bd-eee6-116a2debda5d.jpg" width="48"/>
+       <img alt="Company 2 logo, light blue background with blue text C2" class="w-12 h-12 rounded-lg object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/59e78343-21b4-4ce8-25b7-a896f7c9ddc1.jpg" width="48"/>
+       <img alt="Company 3 logo, dark background with white text C3" class="w-12 h-12 rounded-lg object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/5d8beae6-d8cb-4870-563c-42eafd7cf44f.jpg" width="48"/>
+       <img alt="Company 4 logo, light gray background with gray text C4" class="w-12 h-12 rounded-lg object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/7f28188c-6025-4e59-b4b0-dc41ce82c50d.jpg" width="48"/>
+       <img alt="Company 5 logo, very light blue background with blue text C5" class="w-12 h-12 rounded-lg object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/46d71d5e-4d3d-44ac-8407-70974c4dab1a.jpg" width="48"/>
+       <img alt="Company 6 logo, light blue background with blue text C6" class="w-12 h-12 rounded-lg object-contain" height="48" src="https://storage.googleapis.com/a1aa/image/2299218d-e360-4dcc-32c8-900f5c32a29b.jpg" width="48"/>
+      </div>
+     </section>
+    </aside>
+   </div>
+  </div>
+  
+  
+
+
+
+
+
+ 
+  <title>
+   Top Companies Hiring
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-black">
+  <div class="max-w-[900px] mx-auto p-4">
+   <h2 class="font-semibold text-sm mb-3">
+    Top Companies Hiring
+   </h2>
+   <img alt="Office workplace with people working on computers in a modern, well-lit room with large windows and multiple desks" class="w-full h-[150px] object-cover mb-4 rounded-sm" height="150" src="https://storage.googleapis.com/a1aa/image/01c2053f-2f1f-448c-61dd-e04e6ac011d6.jpg" width="900"/>
+   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+    <!-- Company 1 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 1 logo blue square with white arrow symbol" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/0d9d11c4-8bdc-4355-d266-65752d54e53d.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 1
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      19 open positions
+     </a>
+    </div>
+    <!-- Company 2 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 2 logo white square with green leaf icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/7a1cc5d8-0f7e-469e-548f-304d0f9083b2.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 2
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      8 open positions
+     </a>
+    </div>
+    <!-- Company 3 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 3 logo red square with white gear icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/810c8414-1649-434c-7435-41e9ba8360f6.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 3
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      10 open positions
+     </a>
+    </div>
+    <!-- Company 4 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 4 logo purple square with white camera icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/09e0c8cf-3502-470c-321f-075d4b8da464.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 4
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      11 open positions
+     </a>
+    </div>
+    <!-- Company 5 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 5 logo white square with two small orange dots" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/c63033d6-3281-4d12-d14a-8f2884c0ee89.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 5
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      6 open positions
+     </a>
+    </div>
+    <!-- Company 6 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 6 logo white square with blue globe icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/a8dce742-ff78-489e-ec37-dfb16a6b23a8.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 6
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      21 open positions
+     </a>
+    </div>
+    <!-- Company 7 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 7 logo yellow square with black text and icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/80bb9acd-2ac3-45af-b45a-1b723c9bf7f5.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 7
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      6 open positions
+     </a>
+    </div>
+    <!-- Company 8 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 8 logo turquoise circle with white wave icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/6d5d7582-31a8-40a3-1f2b-321d86588e56.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 8
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      5 open positions
+     </a>
+    </div>
+    <!-- Company 9 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 9 logo black square with white wings icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/427dde21-887d-43e6-35a4-a898ab1f6211.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 9
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      16 open positions
+     </a>
+    </div>
+    <!-- Company 10 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 10 logo purple square with pink heart icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/f908b88c-a362-4963-bdf2-096bde641355.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 10
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      24 open positions
+     </a>
+    </div>
+    <!-- Company 11 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 11 logo gray square with white text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/9dcef898-1852-4bdb-9626-eb0b131a4815.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 11
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      5 open positions
+     </a>
+    </div>
+    <!-- Company 12 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 12 logo white square with blue circular emblem" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/01798b1c-73b8-44b1-d6e5-9caf91f56e91.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 12
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      7 open positions
+     </a>
+    </div>
+    <!-- Company 13 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 13 logo dark green square with white text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/a8c2700b-9c08-4552-f3f2-c58147f8f3a0.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 13
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      19 open positions
+     </a>
+    </div>
+    <!-- Company 14 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 14 logo light blue hexagon with white text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/3515033b-19da-4b25-a32c-b320e3259e0d.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 14
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      19 open positions
+     </a>
+    </div>
+    <!-- Company 15 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 15 logo bright red square with white text and emblem" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/02e1d09f-d7b8-443b-3281-0a4bc957ae6f.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 15
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      8 open positions
+     </a>
+    </div>
+    <!-- Company 16 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 16 logo purple square with white text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/01000c3a-1ba6-4419-4f4c-cd8951b21e2a.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 16
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      9 open positions
+     </a>
+    </div>
+    <!-- Company 17 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 17 logo white square with orange lightbulb icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/d31bf21a-a435-48be-7a08-8b38b8ca21f6.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 17
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      21 open positions
+     </a>
+    </div>
+    <!-- Company 18 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 18 logo light blue rectangle with blue text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/afe87035-20dc-4a7b-fd02-8392423219e3.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 18
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      19 open positions
+     </a>
+    </div>
+    <!-- Company 19 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 19 logo yellow square with black text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/3e9ed0fb-13ab-4428-64c5-3e539f2188c7.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 19
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      13 open positions
+     </a>
+    </div>
+    <!-- Company 20 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 20 logo teal square with white text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/c668cd5a-3c82-48da-ba6c-f5040a31f8c0.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 20
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      24 open positions
+     </a>
+    </div>
+    <!-- Company 21 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 21 logo black square with white text and emblem" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/1a0cd97a-fd78-49f1-b5dc-b3372ee2126e.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 21
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      20 open positions
+     </a>
+    </div>
+    <!-- Company 22 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 22 logo black rectangle with pink heart icon" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/463d91fe-cd8b-4336-d053-7b474afdd01c.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 22
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      8 open positions
+     </a>
+    </div>
+    <!-- Company 23 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 23 logo white square with gray circle and text" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/eb3535df-296b-4ea9-6722-4dd7a0cdb452.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 23
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      13 open positions
+     </a>
+    </div>
+    <!-- Company 24 -->
+    <div class="bg-[#f5f8ff] rounded-lg p-3 text-center">
+     <img alt="Company 24 logo dark blue square with white text and emblem" class="mx-auto mb-2 rounded" height="60" src="https://storage.googleapis.com/a1aa/image/4e66a069-89ae-4b74-19ac-2f1d38c6e908.jpg" width="60"/>
+     <div class="text-xs font-semibold text-black">
+      Company 24
+     </div>
+     <div class="text-[10px] text-gray-500">
+      Technology
+     </div>
+     <a class="text-[10px] text-blue-600" href="#">
+      14 open positions
+     </a>
+    </div>
+   </div>
+  </div>
+
+
+
+
+   <title>
+   JobMatch Tools
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   /* Override Tailwind default link color for disabled look in footer */
+    .footer-link {
+      color: #6b7280;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900 font-sans">
+  <section class="px-4 py-8 max-w-7xl mx-auto">
+   <h2 class="font-semibold text-sm mb-4">
+    Essential Job Seeker Tools
+   </h2>
+   <div class="flex flex-col sm:flex-row gap-4">
+    <div class="bg-white rounded-lg shadow-sm p-4 flex items-start gap-3 w-full sm:w-1/3">
+     <img alt="Blue icon of a document representing Resume Builder" class="mt-1" height="24" src="https://storage.googleapis.com/a1aa/image/ef0ab113-1ade-47a4-54b7-25b86c3d7a7a.jpg" width="24"/>
+     <div>
+      <h3 class="text-xs font-semibold mb-1">
+       Resume Builder
+      </h3>
+      <p class="text-xs text-gray-500 leading-tight">
+       Create a professional resume in minutes with our easy-to-use builder
+      </p>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm p-4 flex items-start gap-3 w-full sm:w-1/3">
+     <img alt="Blue icon of calculator representing Salary Calculator" class="mt-1" height="24" src="https://storage.googleapis.com/a1aa/image/2df80140-884c-41dd-de58-5d2eb1df506f.jpg" width="24"/>
+     <div>
+      <h3 class="text-xs font-semibold mb-1">
+       Salary Calculator
+      </h3>
+      <p class="text-xs text-gray-500 leading-tight">
+       Compare salaries and benefits across different roles and locations
+      </p>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm p-4 flex items-start gap-3 w-full sm:w-1/3">
+     <img alt="Blue icon of a line chart representing Career Path Planner" class="mt-1" height="24" src="https://storage.googleapis.com/a1aa/image/a9833f5c-dff5-4e87-9d7b-b0f4e1d9a4f6.jpg" width="24"/>
+     <div>
+      <h3 class="text-xs font-semibold mb-1">
+       Career Path Planner
+      </h3>
+      <p class="text-xs text-gray-500 leading-tight">
+       Plan your career growth with personalized development paths
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="bg-gray-900 text-gray-400 text-xs font-normal">
+   <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-5 gap-8">
+    <div class="sm:col-span-1 space-y-3">
+     <div class="flex items-center gap-2 text-gray-300 font-semibold text-sm">
+      <i class="fas fa-briefcase text-blue-600">
+      </i>
+      <span>
+       JobMatch
+      </span>
+     </div>
+     <p class="text-gray-500 text-[10px] leading-tight max-w-[160px]">
+      Connecting talented professionals with amazing opportunities.
+     </p>
+     <div class="flex space-x-3 text-gray-500 text-xs">
+      <a aria-label="LinkedIn" class="hover:text-white" href="#">
+       <i class="fab fa-linkedin-in">
+       </i>
+      </a>
+      <a aria-label="Twitter" class="hover:text-white" href="#">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+      <a aria-label="Facebook" class="hover:text-white" href="#">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a aria-label="Instagram" class="hover:text-white" href="#">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div class="sm:col-span-1 space-y-1">
+     <h4 class="text-gray-300 font-semibold text-xs mb-2">
+      Job Seekers
+     </h4>
+     <ul class="space-y-1">
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Browse Jobs
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Companies
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Salary Guide
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Career Advice
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="sm:col-span-1 space-y-1">
+     <h4 class="text-gray-300 font-semibold text-xs mb-2">
+      Employers
+     </h4>
+     <ul class="space-y-1">
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Post a Job
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Pricing
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Recruitment Solutions
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        FAQ
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="sm:col-span-1 space-y-1">
+     <h4 class="text-gray-300 font-semibold text-xs mb-2">
+      Resources
+     </h4>
+     <ul class="space-y-1">
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Help Center
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Privacy Policy
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Terms of Service
+       </a>
+      </li>
+      <li>
+       <a class="footer-link hover:text-white" href="#">
+        Contact Us
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="border-t border-gray-800 text-center text-gray-600 text-[10px] py-3">
+    © 2024 JobMatch. All rights reserved.
+   </div>
+  </footer>
+ </body>
+</html>

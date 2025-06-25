@@ -1,0 +1,197 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Reset Password
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-[#F8FAFF] min-h-screen flex items-center justify-center p-4">
+  <main class="bg-white rounded-xl max-w-[360px] w-full p-6">
+   <h1 class="text-center font-semibold text-[#0B1E40] text-lg leading-6">
+    Reset Password
+   </h1>
+   <p class="text-center text-[#5F6D7E] text-xs leading-4 mt-1 mb-6">
+    Choose your preferred method to reset password
+   </p>
+   <nav class="flex border border-[#E6E9F0] rounded-t-md text-xs font-medium text-[#5F6D7E]">
+    <button aria-current="page" class="flex-1 flex items-center justify-center gap-1 border-b-2 border-[#2563FF] text-[#2563FF] py-2" id="emailTab" type="button">
+     <i class="far fa-envelope">
+     </i>
+     Email
+    </button>
+    <button class="flex-1 flex items-center justify-center gap-1 py-2" id="phoneTab" style="" type="button">
+     <i class="fas fa-mobile-alt">
+     </i>
+     Phone
+    </button>
+   </nav>
+   <form class="mt-6 space-y-4" id="resetForm" onsubmit="return false">
+    <!-- Email Tab Content -->
+    <div id="emailContent">
+     <div>
+      <label class="block text-[#0B1E40] text-xs font-semibold mb-1" for="email">
+       Email Address
+      </label>
+      <input class="w-full border border-[#E6E9F0] rounded-md text-xs text-[#9CA3AF] placeholder-[#9CA3AF] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#2563FF]" id="email" name="email" placeholder="Enter your email" type="email"/>
+     </div>
+     <div class="border border-[#E6E9F0] rounded-md p-3">
+      <div class="flex items-center gap-2 mb-1 text-xs text-[#0B1E40] font-semibold">
+       <i class="fas fa-shield-alt text-[#2563FF]">
+       </i>
+       CAPTCHA Verification
+      </div>
+      <div class="flex items-center justify-between bg-[#F8FAFF] border border-[#E6E9F0] rounded-md px-3 py-2">
+       <img alt="CAPTCHA image showing distorted text characters for verification" class="h-10 select-none" height="40" src="https://storage.googleapis.com/a1aa/image/6ef1ed3e-e4f8-4d32-92ad-c2ce052adb7b.jpg" width="100"/>
+       <button aria-label="Refresh CAPTCHA" class="text-[#2563FF] text-xs font-semibold hover:underline" id="refreshEmailCaptcha" type="button">
+        Refresh
+       </button>
+      </div>
+      <input aria-label="Enter CAPTCHA text" class="w-full border border-[#E6E9F0] rounded-md text-xs text-[#0B1E40] placeholder-[#9CA3AF] px-3 py-2 mt-2 focus:outline-none focus:ring-1 focus:ring-[#2563FF]" id="emailCaptchaInput" maxlength="6" name="emailCaptchaInput" placeholder="Enter CAPTCHA text" type="text"/>
+     </div>
+     <button class="w-full bg-[#2563FF] text-white text-xs font-semibold rounded-md py-2 mt-1" id="emailConfirmBtn" type="button">
+      Comfirm
+     </button>
+     <div>
+      <label class="block text-[#0B1E40] text-xs font-semibold mb-1 mt-4" for="emailVerification">
+       Verification Code
+      </label>
+      <div class="flex gap-2">
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+      </div>
+      <p class="text-[#9CA3AF] text-[9px] mt-1">
+       Enter the 6-digit code sent to your email
+      </p>
+     </div>
+     <button class="w-full bg-[#2563FF] text-white text-xs font-semibold rounded-md py-2 mt-3" id="emailVerifyBtn" type="button">
+      Verify &amp; Continue
+     </button>
+     <button class="w-full border border-[#E6E9F0] text-[#5F6D7E] text-xs font-normal rounded-md py-2 mt-2" id="emailResendBtn" type="button">
+      Resend Code
+     </button>
+    </div>
+    <!-- Phone Tab Content -->
+    <div class="hidden" id="phoneContent">
+     <div>
+      <label class="block text-[#0B1E40] text-xs font-semibold mb-1" for="phone">
+       Phone Number
+      </label>
+      <input class="w-full border border-[#E6E9F0] rounded-md text-xs text-[#9CA3AF] placeholder-[#9CA3AF] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#2563FF]" id="phone" name="phone" placeholder="Enter your phone number" type="tel"/>
+     </div>
+     <div class="border border-[#E6E9F0] rounded-md p-3">
+      <div class="flex items-center gap-2 mb-1 text-xs text-[#0B1E40] font-semibold">
+       <i class="fas fa-shield-alt text-[#2563FF]">
+       </i>
+       CAPTCHA Verification
+      </div>
+      <div class="flex items-center justify-between bg-[#F8FAFF] border border-[#E6E9F0] rounded-md px-3 py-2">
+       <img alt="CAPTCHA image showing distorted text characters for verification" class="h-10 select-none" height="40" id="phoneCaptchaImage" src="https://storage.googleapis.com/a1aa/image/6ef1ed3e-e4f8-4d32-92ad-c2ce052adb7b.jpg" width="100"/>
+       <button aria-label="Refresh CAPTCHA" class="text-[#2563FF] text-xs font-semibold hover:underline" id="refreshPhoneCaptcha" type="button">
+        Refresh
+       </button>
+      </div>
+      <input aria-label="Enter CAPTCHA text" class="w-full border border-[#E6E9F0] rounded-md text-xs text-[#0B1E40] placeholder-[#9CA3AF] px-3 py-2 mt-2 focus:outline-none focus:ring-1 focus:ring-[#2563FF]" id="phoneCaptchaInput" maxlength="6" name="phoneCaptchaInput" placeholder="Enter CAPTCHA text" type="text"/>
+     </div>
+     <button class="w-full bg-[#2563FF] text-white text-xs font-semibold rounded-md py-2 mt-1" id="phoneConfirmBtn" type="button">
+      Comfirm
+     </button>
+     <div>
+      <label class="block text-[#0B1E40] text-xs font-semibold mb-1 mt-4" for="phoneVerification">
+       Verification Code
+      </label>
+      <div class="flex gap-2">
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+       <input class="w-9 h-9 border border-[#E6E9F0] rounded-md text-center text-xs text-[#0B1E40] font-semibold focus:outline-none focus:ring-1 focus:ring-[#2563FF]" maxlength="1" type="text"/>
+      </div>
+      <p class="text-[#9CA3AF] text-[9px] mt-1">
+       Enter the 6-digit code sent to your phone
+      </p>
+     </div>
+     <button class="w-full bg-[#2563FF] text-white text-xs font-semibold rounded-md py-2 mt-3" id="phoneVerifyBtn" type="button">
+      Verify &amp; Continue
+     </button>
+     <button class="w-full border border-[#E6E9F0] text-[#5F6D7E] text-xs font-normal rounded-md py-2 mt-2" id="phoneResendBtn" type="button">
+      Resend Code
+     </button>
+    </div>
+   </form>
+   <div class="text-[#2563FF] text-xs font-normal mt-3 text-center select-none cursor-pointer">
+    <i class="fas fa-angle-left">
+    </i>
+    <a href="Email.html">Back to Login</a>
+   </div>
+  </main>
+  <script>
+   const emailTab = document.getElementById('emailTab');
+    const phoneTab = document.getElementById('phoneTab');
+    const emailContent = document.getElementById('emailContent');
+    const phoneContent = document.getElementById('phoneContent');
+
+    emailTab.addEventListener('click', () => {
+      emailTab.classList.add('border-b-2', 'border-[#2563FF]', 'text-[#2563FF]');
+      phoneTab.classList.remove('border-b-2', 'border-[#2563FF]', 'text-[#2563FF]');
+      emailContent.classList.remove('hidden');
+      phoneContent.classList.add('hidden');
+    });
+
+    phoneTab.addEventListener('click', () => {
+      phoneTab.classList.add('border-b-2', 'border-[#2563FF]', 'text-[#2563FF]');
+      emailTab.classList.remove('border-b-2', 'border-[#2563FF]', 'text-[#2563FF]');
+      phoneContent.classList.remove('hidden');
+      emailContent.classList.add('hidden');
+    });
+
+    // Simple CAPTCHA refresh simulation with random text
+    function randomCaptchaText(length = 6) {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
+    function refreshCaptcha(imgElement, inputElement) {
+      const newText = randomCaptchaText();
+      // Update image src with new text placeholder
+      imgElement.src = `https://placehold.co/100x40/png?text=${newText}`;
+      // Clear input
+      inputElement.value = '';
+    }
+
+    const refreshEmailBtn = document.getElementById('refreshEmailCaptcha');
+    const emailCaptchaImg = emailContent.querySelector('img');
+    const emailCaptchaInput = document.getElementById('emailCaptchaInput');
+
+    refreshEmailBtn.addEventListener('click', () => {
+      refreshCaptcha(emailCaptchaImg, emailCaptchaInput);
+    });
+
+    const refreshPhoneBtn = document.getElementById('refreshPhoneCaptcha');
+    const phoneCaptchaImg = document.getElementById('phoneCaptchaImage');
+    const phoneCaptchaInput = document.getElementById('phoneCaptchaInput');
+
+    refreshPhoneBtn.addEventListener('click', () => {
+      refreshCaptcha(phoneCaptchaImg, phoneCaptchaInput);
+    });
+  </script>
+ </body>
+</html>

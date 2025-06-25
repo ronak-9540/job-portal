@@ -1,0 +1,215 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Page with Captcha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-white">
+  <main class="w-full max-w-sm px-6">
+    <section>
+      <nav class="mb-6">
+        <ul class="flex space-x-6 border-b border-blue-600">
+          <li>
+            <a href="#" class="text-blue-600 font-semibold text-sm pb-1 inline-block border-b-2 border-blue-600">Login</a>
+          </li>
+        </ul>
+      </nav>
+
+      <form class="space-y-4" autocomplete="off" novalidate id="loginForm">
+        <div>
+          <label for="phone" class="block text-xs text-gray-900 mb-1">Phone Number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Enter your phone"
+            class="w-full rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="captchaInput" class="block text-xs text-gray-900 mb-1">Captcha Verification</label>
+          <div class="flex space-x-2 items-center">
+            <div id="captchaText" class="flex-1 rounded-md bg-gray-100 border border-gray-200 text-center font-semibold text-gray-700 py-2 select-none text-lg tracking-widest user-select-none">
+              <!-- Captcha text inserted by JS -->
+            </div>
+            <button type="button" aria-label="Refresh captcha" id="refreshCaptcha" class="flex items-center justify-center w-10 h-10 rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600">
+              <i class="fas fa-th-large text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <input
+            id="captchaInput"
+            name="captchaInput"
+            type="text"
+            placeholder="Enter captcha"
+            class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            required
+          />
+        </div>
+
+        <div>
+          <button
+            type="button"
+            id="getOtpBtn"
+            class="w-full bg-blue-600 text-white font-semibold text-sm rounded-md py-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          >
+            Get OTP
+          </button>
+        </div>
+
+        <div class="flex justify-between space-x-2">
+          <input
+            type="text"
+            maxlength="1"
+            class="w-10 h-10 rounded-md border border-gray-200 bg-gray-100 text-center text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            id="otp1"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="w-10 h-10 rounded-md border border-gray-200 bg-gray-100 text-center text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            id="otp2"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="w-10 h-10 rounded-md border border-gray-200 bg-gray-100 text-center text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            id="otp3"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="w-10 h-10 rounded-md border border-gray-200 bg-gray-100 text-center text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            id="otp4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="w-10 h-10 rounded-md border border-gray-200 bg-gray-100 text-center text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            id="otp5"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+          <input
+            type="text"
+            maxlength="1"
+            class="w-10 h-10 rounded-md border border-gray-200 bg-gray-100 text-center text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            id="otp6"
+            inputmode="numeric"
+            pattern="[0-9]*"
+          />
+        </div>
+
+        <div>
+          <button
+            type="button"
+            id="verifyLoginBtn"
+            class="w-full bg-blue-600 text-white font-semibold text-sm rounded-md py-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          >
+            Verify & Login
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-4 text-center">
+        <a href="Email.html" class="text-blue-600 text-xs font-normal hover:underline">Go to previous page</a>
+      </div>
+
+      <div class="mt-3 text-center text-xs text-gray-600 font-normal">
+        Or continue with
+      </div>
+
+      <div class="mt-1 text-center text-xs text-gray-600 font-normal">
+        Don't have an account? <a href="registr_1.html" class="text-blue-600 font-semibold hover:underline">Register Now</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Generate random captcha string (6 uppercase alphanumeric chars)
+    function generateCaptcha() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let captcha = '';
+      for (let i = 0; i < 6; i++) {
+        captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return captcha;
+    }
+
+    const captchaTextEl = document.getElementById('captchaText');
+    const refreshBtn = document.getElementById('refreshCaptcha');
+    const captchaInput = document.getElementById('captchaInput');
+    const getOtpBtn = document.getElementById('getOtpBtn');
+
+    let currentCaptcha = '';
+
+    function setNewCaptcha() {
+      currentCaptcha = generateCaptcha();
+      captchaTextEl.textContent = currentCaptcha;
+      captchaInput.value = '';
+    }
+
+    refreshBtn.addEventListener('click', () => {
+      setNewCaptcha();
+    });
+
+    getOtpBtn.addEventListener('click', () => {
+      const enteredCaptcha = captchaInput.value.trim().toUpperCase();
+      if (enteredCaptcha === '') {
+        alert('Please enter the captcha.');
+        captchaInput.focus();
+        return;
+      }
+      if (enteredCaptcha !== currentCaptcha) {
+        alert('Captcha does not match. Please try again.');
+        setNewCaptcha();
+        captchaInput.focus();
+        return;
+      }
+      alert('Captcha verified! OTP sent.');
+      // Here you can add your OTP sending logic
+    });
+
+    // Initialize captcha on page load
+    setNewCaptcha();
+
+    // Optional: Auto move focus on OTP inputs
+    const otpInputs = Array.from(document.querySelectorAll('input[id^="otp"]'));
+    otpInputs.forEach((input, idx) => {
+      input.addEventListener('input', () => {
+        if (input.value.length === 1 && idx < otpInputs.length - 1) {
+          otpInputs[idx + 1].focus();
+        }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && input.value === '' && idx > 0) {
+          otpInputs[idx - 1].focus();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

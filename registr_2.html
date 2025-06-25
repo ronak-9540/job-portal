@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Experience Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #1f2937;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      min-height: 100vh;
+    }
+    form {
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0;
+    }
+    label {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 4px;
+      display: block;
+    }
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 14px;
+      line-height: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      color: #6b7280;
+      outline-offset: 2px;
+      outline-color: transparent;
+      transition: outline-color 0.2s ease;
+    }
+    input[type="text"]::placeholder {
+      color: #9ca3af;
+    }
+    input[type="text"]:focus,
+    select:focus {
+      outline-color: #2563eb;
+      border-color: #2563eb;
+      color: #111827;
+    }
+    .flex-row {
+      display: flex;
+      gap: 16px;
+    }
+    .flex-1 {
+      flex: 1;
+    }
+    .checkbox-container {
+      display: flex;
+      gap: 8px;
+      font-size: 10px;
+      line-height: 14px;
+      color: #374151;
+      align-items: flex-start;
+    }
+    .checkbox-container input[type="checkbox"] {
+      margin-top: 3px;
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+      cursor: pointer;
+    }
+    .captcha-row {
+      display: flex;
+      gap: 8px;
+      max-width: 240px;
+      align-items: center;
+    }
+    .captcha-code {
+      flex: 1;
+      background-color: #e5e7eb;
+      border-radius: 6px;
+      padding: 8px 0;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: #374151;
+      user-select: none;
+    }
+    .captcha-button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+      color: #374151;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease;
+    }
+    .captcha-button:hover,
+    .captcha-button:focus {
+      background-color: #f3f4f6;
+      outline: none;
+    }
+    .captcha-input {
+      margin-top: 8px;
+      max-width: 240px;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      max-width: 240px;
+      gap: 16px;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 24px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover,
+    button:focus {
+      background-color: #1e40af;
+      outline: none;
+    }
+    @media (max-width: 520px) {
+      .flex-row {
+        flex-direction: column;
+      }
+      .btn-row {
+        max-width: 100%;
+      }
+      .captcha-row {
+        max-width: 100%;
+      }
+      .captcha-input {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form id="experience-form" autocomplete="off" novalidate>
+    <h2>Professional Experience</h2>
+
+    <div>
+      <label for="current-job">Current Job Title</label>
+      <input
+        id="current-job"
+        name="current-job"
+        type="text"
+        placeholder="Enter your current job title"
+        required
+        aria-describedby="current-job-desc"
+      />
+    </div>
+
+    <div>
+      <label for="company-name">Company Name</label>
+      <input
+        id="company-name"
+        name="company-name"
+        type="text"
+        placeholder="Enter your company name"
+        required
+        aria-describedby="company-name-desc"
+      />
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-1">
+        <label for="industry">Industry</label>
+        <select id="industry" name="industry" required>
+          <option value="" disabled selected>Select industry</option>
+          <option value="tech">Technology</option>
+          <option value="finance">Finance</option>
+          <option value="health">Healthcare</option>
+          <option value="education">Education</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="flex-1">
+        <label for="employment-type">Employment Type</label>
+        <select id="employment-type" name="employment-type" required>
+          <option value="" disabled selected>Select type</option>
+          <option value="full-time">Full-time</option>
+          <option value="part-time">Part-time</option>
+          <option value="contract">Contract</option>
+          <option value="internship">Internship</option>
+          <option value="freelance">Freelance</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <input
+        id="description"
+        name="description"
+        type="text"
+        placeholder="Describe your role and responsibilities"
+        required
+        aria-describedby="description-desc"
+      />
+    </div>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="police-verification" name="police-verification" required />
+      <label for="police-verification">
+        Police verification is mandatory for this job application. Please note that you will need to complete police verification to proceed with the job application. This is for security purposes.
+      </label>
+    </div>
+
+    <div>
+      <label for="captcha-input">Captcha Verification</label>
+      <div class="captcha-row">
+        <div id="captcha-code" class="captcha-code" aria-live="polite" aria-atomic="true">ABC123</div>
+        <button type="button" id="refresh-captcha" class="captcha-button" aria-label="Refresh captcha">
+          &#x2630;
+        </button>
+      </div>
+      <input
+        id="captcha-input"
+        name="captcha-input"
+        type="text"
+        placeholder="Enter captcha"
+        class="captcha-input"
+        required
+        aria-describedby="captcha-desc"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="btn-row">
+      <button type="button" id="btn-back"><a href="registr_1.html">back</a></button>
+      <button type="submit" id="btn-next">Next</button>
+    </div>
+  </form>
+
+  <script>
+    (function() {
+      const captchaCodeEl = document.getElementById('captcha-code');
+      const refreshBtn = document.getElementById('refresh-captcha');
+      const captchaInput = document.getElementById('captcha-input');
+      const form = document.getElementById('experience-form');
+
+      // Generate random captcha string (6 chars, uppercase letters and digits)
+      function generateCaptcha() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let captcha = '';
+        for (let i = 0; i < 6; i++) {
+          captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return captcha;
+      }
+
+      function refreshCaptcha() {
+        const newCaptcha = generateCaptcha();
+        captchaCodeEl.textContent = newCaptcha;
+        captchaInput.value = '';
+      }
+
+      refreshBtn.addEventListener('click', refreshCaptcha);
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const enteredCaptcha = captchaInput.value.trim().toUpperCase();
+        const actualCaptcha = captchaCodeEl.textContent.trim().toUpperCase();
+
+        if (enteredCaptcha !== actualCaptcha) {
+          alert('Captcha does not match. Please try again.');
+          refreshCaptcha();
+          captchaInput.focus();
+          return;
+        }
+
+        if (!form.checkValidity()) {
+          alert('Please fill out all required fields and accept police verification.');
+          return;
+        }
+
+        alert('Form submitted successfully!');
+        form.reset();
+        refreshCaptcha();
+      });
+
+      // Initialize captcha on page load
+      refreshCaptcha();
+
+      // Back button example behavior (can be customized)
+      document.getElementById('btn-back').addEventListener('click', () => {
+        alert('Back button clicked');
+      });
+    })();
+  </script>
+</body>
+</html>

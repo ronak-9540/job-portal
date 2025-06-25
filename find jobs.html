@@ -1,0 +1,496 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Find Jobs - Job Portal
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow">
+   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a class="text-2xl font-bold text-indigo-600" href="#">
+     JobPortal
+    </a>
+    <nav class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+     <a class="hover:text-indigo-600 transition" href="#">
+      Home
+     </a>
+     <a class="hover:text-indigo-600 transition border-b-2 border-indigo-600 pb-1" href="#">
+      Find Jobs
+     </a>
+     <a class="hover:text-indigo-600 transition" href="company.html">
+      Companies
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#">
+      About
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#">
+      Contact
+     </a>
+    </nav>
+    <div class="md:hidden">
+     <button aria-label="Toggle menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600" id="mobile-menu-button">
+      <i class="fas fa-bars fa-lg">
+      </i>
+     </button>
+    </div>
+   </div>
+   <nav class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+    <a class="block px-4 py-3 text-gray-700 font-semibold border-b border-gray-200 hover:bg-indigo-50" href="#">
+     Home
+    </a>
+    <a class="block px-4 py-3 text-indigo-600 font-semibold border-b border-gray-200 bg-indigo-50" href="#">
+     Find Jobs
+    </a>
+    <a class="block px-4 py-3 text-gray-700 font-semibold border-b border-gray-200 hover:bg-indigo-50" href="#">
+     Companies
+    </a>
+    <a class="block px-4 py-3 text-gray-700 font-semibold border-b border-gray-200 hover:bg-indigo-50" href="#">
+     About
+    </a>
+    <a class="block px-4 py-3 text-gray-700 font-semibold hover:bg-indigo-50" href="#">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow container mx-auto px-4 py-8">
+   <h1 class="text-3xl font-bold text-gray-900 mb-6">
+    Find Your Next Job
+   </h1>
+   <form class="bg-white p-6 rounded-lg shadow-md mb-8 grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+    <div>
+     <label class="block text-sm font-semibold text-gray-700 mb-1" for="keyword">
+      Keyword
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="keyword" name="keyword" placeholder="Job title, skills, or company" type="text"/>
+    </div>
+    <div>
+     <label class="block text-sm font-semibold text-gray-700 mb-1" for="location">
+      Location
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="location" name="location" placeholder="City, state, or zip" type="text"/>
+    </div>
+    <div>
+     <label class="block text-sm font-semibold text-gray-700 mb-1" for="job-type">
+      Job Type
+     </label>
+     <select class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="job-type" name="job-type">
+      <option value="">
+       Any
+      </option>
+      <option value="full-time">
+       Full-time
+      </option>
+      <option value="part-time">
+       Part-time
+      </option>
+      <option value="contract">
+       Contract
+      </option>
+      <option value="internship">
+       Internship
+      </option>
+      <option value="temporary">
+       Temporary
+      </option>
+     </select>
+    </div>
+    <div>
+     <button class="w-full bg-indigo-600 text-white font-semibold rounded-md px-4 py-2 hover:bg-indigo-700 transition" type="submit">
+      Search
+     </button>
+    </div>
+   </form>
+   <section>
+    <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+     Job Listings
+    </h2>
+    <ul class="space-y-6">
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Google company logo, multicolored G on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/e0e5b530-77b1-4dd2-9bc8-f73f87cce272.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Software Engineer
+        </h3>
+        <p class="text-gray-700">
+         Google - Mountain View, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 2 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Amazon company logo, black Amazon wordmark with smile arrow on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/8c92900d-22a9-45a0-7339-cfa8ddbaae47.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Data Analyst
+        </h3>
+        <p class="text-gray-700">
+         Amazon - Seattle, WA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 5 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Microsoft company logo, four colored squares in red, green, blue, and yellow on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/13496335-3399-4677-435f-06abdccf6fa7.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Product Manager
+        </h3>
+        <p class="text-gray-700">
+         Microsoft - Redmond, WA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 1 week ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Facebook company logo, white letter f on blue square background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/d6cc2f71-178d-4026-7edb-65d00137d41c.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         UX Designer
+        </h3>
+        <p class="text-gray-700">
+         Meta (Facebook) - Menlo Park, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Contract
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 3 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Apple company logo, black apple silhouette on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/34a62344-f1ef-4d54-c0a3-7e94ed2970e5.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         iOS Developer
+        </h3>
+        <p class="text-gray-700">
+         Apple - Cupertino, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 4 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Netflix company logo, red Netflix wordmark on black background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/6e824679-c7ef-4fcd-36ef-49988329ca73.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Content Strategist
+        </h3>
+        <p class="text-gray-700">
+         Netflix - Los Gatos, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Part-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 6 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Tesla company logo, stylized T letter in red on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/98bd558d-0d20-440c-a998-550c72c8b24a.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Electrical Engineer
+        </h3>
+        <p class="text-gray-700">
+         Tesla - Palo Alto, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 2 weeks ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Airbnb company logo, red stylized A letter on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/428f2734-0f42-4ec8-734c-2a38001c66b9.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Marketing Specialist
+        </h3>
+        <p class="text-gray-700">
+         Airbnb - San Francisco, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Contract
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 1 day ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Spotify company logo, green circle with three black curved lines on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/7e1dd055-a3c2-4a55-b2b6-f60602dbca16.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Backend Developer
+        </h3>
+        <p class="text-gray-700">
+         Spotify - New York, NY
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 3 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Uber company logo, black Uber wordmark on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/d2ff26c1-0217-41fd-a388-c36917a03cbd.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Operations Manager
+        </h3>
+        <p class="text-gray-700">
+         Uber - San Francisco, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 4 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Slack company logo, multicolored hashtag symbol on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/66f025e3-6eb1-4d08-6b0f-3c7a86eff278.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Customer Success Manager
+        </h3>
+        <p class="text-gray-700">
+         Slack - Remote
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 1 week ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Dropbox company logo, blue open box icon on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/cdb59b64-d5b2-4066-4e76-2ca0bb655554.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Frontend Developer
+        </h3>
+        <p class="text-gray-700">
+         Dropbox - San Francisco, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 2 weeks ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Twitter company logo, white bird silhouette on blue background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/29424886-e9da-4560-21c1-6e157a02527f.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Social Media Manager
+        </h3>
+        <p class="text-gray-700">
+         Twitter - San Francisco, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Contract
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 3 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="LinkedIn company logo, white in letters on blue background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/dc72e8cb-67fe-40be-3f39-f5c0583321d4.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         HR Specialist
+        </h3>
+        <p class="text-gray-700">
+         LinkedIn - Sunnyvale, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 1 week ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+     <li class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+       <img alt="Adobe company logo, red stylized A letter on white background" class="w-20 h-20 object-contain rounded" height="80" src="https://storage.googleapis.com/a1aa/image/8b4f2fd0-8b2a-4c56-02df-472b81d20cdf.jpg" width="80"/>
+       <div>
+        <h3 class="text-xl font-semibold text-indigo-600 hover:underline cursor-pointer">
+         Graphic Designer
+        </h3>
+        <p class="text-gray-700">
+         Adobe - San Jose, CA
+        </p>
+        <p class="text-sm text-gray-500">
+         Full-time
+        </p>
+       </div>
+      </div>
+      <div class="text-gray-600 text-sm md:text-right">
+       <p>
+        Posted 5 days ago
+       </p>
+       <a class="inline-block mt-2 text-indigo-600 font-semibold hover:underline" href="#">
+        View Details
+       </a>
+      </div>
+     </li>
+    </ul>
+   </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-12">
+   <div class="container mx-auto px-4 py-6 text-center text-gray-600 text-sm">
+    © 2024 JobPortal. All rights reserved.
+   </div>
+  </footer>
+  <script>
+   const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>
